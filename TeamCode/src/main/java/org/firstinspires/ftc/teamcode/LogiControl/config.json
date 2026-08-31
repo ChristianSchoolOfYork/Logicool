@@ -1,0 +1,8 @@
+{
+  "Motors": {
+  "FL": "Front_Left_Motor",
+  "FR": "Front_Right_Motor",
+  "BL": "Back_Left_Motor",
+  "BR": "Back_Right_Motor"
+  }
+}
