@@ -22,7 +22,7 @@ public class FrameData {
             lastFrame = totalFrames;
             elapsed = 0;
         }
-
+        telemetry.addData("Delta Time", "%.2f", deltaTime);
         telemetry.addData("Total Frames", "%.2f", totalFrames);
         telemetry.addData("Cycles/sec", "%.2f Hz", cyclesPerSecond);
     }
