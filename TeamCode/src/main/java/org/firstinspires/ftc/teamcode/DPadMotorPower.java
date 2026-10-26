@@ -32,8 +32,19 @@ public class DPadMotorPower extends LinearOpMode {
             timer.reset();
 
             // Stop motor power on Left or Right D-pad press
-            if (gamepad1.dpad_left || gamepad1.dpad_right) {
+            if (gamepad1.dpad_left) {
                 magnitude = 0.0;
+            } else if (gamepad1.dpad_right) {
+                int ticks = motor.getCurrentPosition();
+
+                if (ticks != 0) {
+                    motor.setTargetPosition(0);
+                    motor.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
+                    motor.setPower(0.5);
+                } else {
+                    motor.setPower(0.0);
+                }
+                
             } else if (gamepad1.dpad_up) {
                 magnitude += changeRate * deltaTime;
             } else if (gamepad1.dpad_down) {
