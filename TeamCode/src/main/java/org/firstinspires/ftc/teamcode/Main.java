@@ -14,15 +14,14 @@ public class Main extends LinearOpMode {
     public void runOpMode(){
        telemetry.addData("Status", "Initialized");
        telemetry.update();
-       FrameData framedata = new FrameData(telemetry);
+
        waitForStart();
 
        timer.reset();
 
 
        while (opModeIsActive()) {
-           framedata.update(timer.seconds());
-           telemetry.update();
+            telemetry.update();
        }
    }
 }
